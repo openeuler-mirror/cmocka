@@ -31,11 +31,12 @@ It only requires the standard C library, works on a range of computing platforms
 This package is a library to simplify and generalize unit tests for C with
 support for mock objects
 
-%package -n libcmocka-devel
-Summary:        Development headers for the cmocka library
-Requires:       libcmocka = %{version}-%{release}
-
-Conflicts: cmockery2-devel
+%package -n    libcmocka-devel
+Summary:       Development headers for the cmocka library
+Requires:      libcmocka = %{version}-%{release}
+Provides:      libcmocka-static = %{version}-%{release}
+Obsoletes:     libcmocka-static < %{version}-%{release}
+Conflicts:     cmockery2-devel
 
 %description -n libcmocka-devel
 Development headers for the cmocka unit testing library.
