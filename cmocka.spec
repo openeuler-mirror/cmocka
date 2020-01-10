@@ -1,5 +1,5 @@
 Name:           cmocka
-Version:        1.1.3
+Version:        1.1.5
 Release:        2
 
 License:        ASL 2.0
@@ -7,8 +7,6 @@ Summary:        An elegant unit testing framework for C with support for mock ob
 URL:            https://cmocka.org
 
 Source0:        https://cmocka.org/files/1.1/%{name}-%{version}.tar.xz
-Source1:        https://cmocka.org/files/1.1/%{name}-%{version}.tar.xz.asc
-Source2:        cmocka.keyring
 
 BuildRequires:  cmake doxygen glibc-devel gnupg2
 
@@ -92,5 +90,8 @@ cd ../
 %{_libdir}/libcmocka-static.a
 
 %changelog
+* Fri Jan 10 2020 chenli <chenli147@huawei.com> - 1.1.5-2
+- Update version.
+
 * Fri Nov 22 2019 Wanjiankang <wanjiankang@huawei.com> - 1.1.3-2
 - Initial package.
