@@ -1,6 +1,6 @@
 Name:           cmocka
 Version:        1.1.5
-Release:        3
+Release:        4
 
 License:        ASL 2.0
 Summary:        An elegant unit testing framework for C with support for mock objects
@@ -43,6 +43,10 @@ Development headers for the cmocka unit testing library.
 %autosetup -p1
 
 %build
+%if "%toolchain" == "clang"
+	export CFLAGS="$CFLAGS -O0"
+	export CXXFLAGS="$CXXFLAGS -O0"
+%endif
 if test ! -e "obj"; then
   mkdir obj
 fi
@@ -90,6 +94,9 @@ cd ../
 %{_libdir}/libcmocka-static.a
 
 %changelog
+* Tue Jun 27 2023 yoo <sunyuechi@iscas.ac.cn> - 1.1.5-4
+- fix clang build error
+
 * Mon May 31 2021 baizhonggui <baizhonggui@huawei.com> - 1.1.5-3
 - Add gcc in BuildRequires
 
